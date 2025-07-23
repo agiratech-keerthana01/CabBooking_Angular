@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Booking Success!!</h2>
+  <p>{{ message }}</p>
+
+  <form [formGroup]="cancelForm" (ngSubmit)="cancelBooking()">
+    <label for="reason">Cancel Reason:</label>
+    <input type="text" id="reason" formControlName="reason" required />
+    <button type="submit" [disabled]="cancelForm.invalid">Cancel Booking</button>
+    <button (click)="goBack()">Back to Booking</button>
+ 
+  </form>
+
+  <p class="success" *ngIf="cancelMsg">{{ cancelMsg }}</p>
+  <p class="error" *ngIf="cancelError">{{ cancelError }}</p>
+</div>
+
+
+
+ 

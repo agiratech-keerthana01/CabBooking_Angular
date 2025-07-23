@@ -1,0 +1,51 @@
+<div>
+  <h3>Registered Drivers</h3>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 full-width-table">
+
+ 
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let driver">{{ driver.id }}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let driver">{{ driver.name }}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let driver">{{ driver.email }}</td>
+  </ng-container>
+
+
+   <ng-container matColumnDef="cabNumber">
+    <th mat-header-cell *matHeaderCellDef>Cab Number</th>
+    <td mat-cell *matCellDef="let driver">{{ driver.cabNumber }}</td>
+  </ng-container>
+
+  
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let driver">
+      <button mat-button color="primary" (click)="openEditDialog(driver)">Edit</button>
+      <button mat-button color="warn" (click)="deleteDriver(driver.id)">Delete</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator
+  [length]="totalUsers"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10, 20]"
+  (page)="onPageChange($event)">
+</mat-paginator>
+
+

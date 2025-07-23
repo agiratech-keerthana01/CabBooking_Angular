@@ -1,0 +1,37 @@
+
+@if (isSuccess) {
+    <app-booking-success></app-booking-success>
+} @else {
+<div class="main-container">
+  <div class="card">
+    <h2>Book a Cab</h2>
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+      <label for="pickupPoint">Pickup Point:</label>
+      <select id="pickupPoint" formControlName="pickupPoint" required>
+        <option value="">Select</option>
+        <option *ngFor="let point of points" [value]="point">{{ point }}</option>
+      </select>
+
+      <label for="dropPoint">Drop Point:</label>
+      <select id="dropPoint" formControlName="dropPoint" required>
+        <option value="">Select</option>
+        <option *ngFor="let point of points" [value]="point">{{ point }}</option>
+      </select>
+
+      <label>Pickup Time:</label>
+      <input type="text" [value]="pickupTime" readonly />
+
+      <label>Estimated Amount:</label>
+      <input type="text" [value]="fareDisplay" readonly />
+
+      <button type="submit" [disabled]="bookForm.invalid">Book</button>
+
+      <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+      <p class="success" *ngIf="successMsg">{{ successMsg }}</p>
+    </form>
+  </div>
+</div>
+}
+
+
+

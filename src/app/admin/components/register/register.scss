@@ -1,0 +1,100 @@
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #dbeafe, #f0f9ff);
+}
+
+.register-card {
+  width: 400px;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+button[type='submit'] {
+  margin-top: 15px;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.login-link a {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Password Criteria */
+.password-criteria {
+  margin: -10px 0 15px;
+  font-size: 13px;
+  color: #6b7280;
+
+  p {
+    margin: 3px 0;
+  }
+
+  .valid {
+    color: green;
+    font-weight: 500;
+  }
+}
+
+/* Password Strength Indicator */
+.password-strength {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #374151;
+
+  span {
+    font-weight: 600;
+  }
+
+  .weak {
+    color: red;
+  }
+
+  .medium {
+    color: orange;
+  }
+
+  .strong {
+    color: green;
+  }
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  font-size: 13px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
