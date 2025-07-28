@@ -20,14 +20,9 @@ export class UserService {
     return this.http.post(`${this.baseUrl}/user/book`, { pickupPoint, dropPoint }, { responseType: 'text' });
   }
 
-  cancelBooking(bookingId: number, reason: string): Observable<string> {
-    return this.http.put(`${this.baseUrl}/user/cancel/${bookingId}`, { reason }, { responseType: 'text' });
-  }
-
-
   getUserBookings() {
     return this.http.get(`${this.baseUrl}/user/user-bookings`);
   }
- 
+  
   
 }

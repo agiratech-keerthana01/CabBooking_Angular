@@ -25,6 +25,7 @@ import { RouterOutlet } from '@angular/router';
 import { Admin } from './admin';
 
 
+
 @NgModule({
   declarations: [Register, ViewUser, EditUserDialogComponent, EditDriverDialogComponent,
     Dashboard, ViewBooking, ViewDrivers, Admin],
@@ -46,6 +47,7 @@ import { Admin } from './admin';
     MatCardModule,
     MatToolbarModule,
     MatDatepickerModule,
-  ]
+  ],
+  exports: [Register]
 })
 export class AdminModule { }

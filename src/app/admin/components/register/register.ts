@@ -83,7 +83,9 @@ export class Register {
       
     };
 
+
     if (this.registerForm.value.role === 'DRIVER') {
+      payload.name = this.registerForm.value.username;
       payload.cabNumber = this.registerForm.value.cabNumber;
       this.adminService.registerDriver(payload).subscribe(() => {
         alert('Driver registered successfully!');

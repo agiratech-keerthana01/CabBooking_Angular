@@ -1,0 +1,65 @@
+::ng-deep .snackbar-success {
+  background-color: #4caf50;
+  color: white;
+}
+
+::ng-deep .snackbar-error {
+  background-color: #f44336;
+  color: white;
+}
+
+::ng-deep .mdc-list-item.mdc-list-item--with-one-line {
+  height: auto !important; 
+  min-height: 48px; 
+}
+
+.assigned-wrapper {
+  padding: 20px;
+
+  h2 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-weight: 600;
+  }
+
+  .error {
+    color: red;
+    font-weight: 500;
+    margin: 10px 0;
+  }
+
+  .assigned-container {
+    margin-top: 20px;
+
+    mat-list {
+      width: 100%;
+    }
+
+    .trip-item {
+      margin-bottom: 16px;
+    }
+
+    .trip-card {
+      width: 100%;
+      background-color: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 16px;
+
+      mat-card-content {
+        font-size: 14px;
+        color: #333;
+
+        p {
+          margin: 6px 0;
+        }
+      }
+
+      mat-card-actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+      }
+    }
+  }
+}

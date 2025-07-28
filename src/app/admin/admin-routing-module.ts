@@ -7,6 +7,7 @@ import { Dashboard } from './components/dashboard/dashboard';
 import { ViewDrivers } from './components/view-drivers/view-drivers';
 import { Admin } from './admin';
 
+
 const routes: Routes = [
 
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
       { path: 'register', component: Register },
       { path: 'user-list', component: ViewUser },
       { path: 'driver-list', component: ViewDrivers },
+      
     ],
   },
 ];

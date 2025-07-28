@@ -1,39 +1,33 @@
-<!-- <div class="search-container">
-  <input type="text" [(ngModel)]="searchQuery" placeholder="Search user..." />
-  <button mat-raised-button color="primary" (click)="search()">Search</button>
-</div> -->
-
 <div>
   <h3>Registered Users</h3>
 </div>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 full-width-table">
 
-  <!-- ID Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>ID</th>
     <td mat-cell *matCellDef="let user">{{ user.id }}</td>
   </ng-container>
 
-  <!-- Name Column -->
+ 
   <ng-container matColumnDef="username">
     <th mat-header-cell *matHeaderCellDef>Name</th>
     <td mat-cell *matCellDef="let user">{{ user.username }}</td>
   </ng-container>
 
-  <!-- Email Column -->
+ 
   <ng-container matColumnDef="email">
     <th mat-header-cell *matHeaderCellDef>Email</th>
     <td mat-cell *matCellDef="let user">{{ user.email }}</td>
   </ng-container>
 
-  <!-- Role Column -->
+  
   <ng-container matColumnDef="role">
     <th mat-header-cell *matHeaderCellDef>Role</th>
     <td mat-cell *matCellDef="let user">{{ user.role }}</td>
   </ng-container>
 
-  <!-- Actions Column -->
+  
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef>Actions</th>
     <td mat-cell *matCellDef="let user">

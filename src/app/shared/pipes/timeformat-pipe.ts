@@ -11,7 +11,7 @@ export class TimeformatPipe implements PipeTransform {
     const date = new Date(value);
 
     if (isNaN(date.getTime())) {
-      return value; // fallback if date is invalid
+      return value;
     }
 
     // Format date: e.g., "22 Jul 2024"

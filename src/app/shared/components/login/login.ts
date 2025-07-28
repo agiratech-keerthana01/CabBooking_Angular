@@ -47,22 +47,26 @@ export class Login implements OnInit{
       return;
     }
 
-    console.log('Login form values:', this.loginForm.value);
-
     this.authService.login(this.loginForm.value).subscribe({
       next: (res: any) => {
         
-        localStorage.setItem('token', res.token);
+        sessionStorage.setItem('token', res.token);
+
         const tokenPayload = JSON.parse(atob(res.token.split('.')[1]));
         const role = tokenPayload.role;
-        console.log(role);
+        const userId = tokenPayload.userId;
+
+        if(userId){
+          sessionStorage.setItem('userId', userId.toString());
+          // console.log("user id stored", userId)
+        }
 
         if (role === 'ADMIN') {
           this.router.navigate(['/admin']);
         } else if (role === 'CUSTOMER') {
           this.router.navigate(['/user']);
         } else if (role === 'DRIVER') {
-          this.router.navigate(['/drive']);
+          this.router.navigate(['/driver']);
         } else {
           this.router.navigate(['/unauthorized']);
         }

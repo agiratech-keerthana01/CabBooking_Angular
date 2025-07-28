@@ -17,7 +17,7 @@ export class ViewBookings implements OnInit, AfterViewInit{
   errorMsg = '';
   filterValue = '';  
 
-
+  //allow to manipulate DOM
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   
@@ -29,6 +29,7 @@ export class ViewBookings implements OnInit, AfterViewInit{
   }
 
   ngAfterViewInit(): void {
+    //connectcs the datasource to pagination and sort
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }

@@ -1,0 +1,58 @@
+.filter-section {
+  padding: 1rem;
+  background-color: #ecf4f8;
+  border-radius: 8px;
+  margin-top: 40px;
+  margin-bottom: 2rem;
+}
+
+.filter-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center; /* Aligns all form fields and button vertically */
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.filter-form mat-form-field {
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-form button {
+  margin-bottom: 18px;
+  height: 50px; /* Match height of mat-form-field inputs */
+  border-radius: 6px;
+  color: white;
+  background-color: #13338d;
+}
+
+.mat-form-field {
+  flex: 1;
+  min-width: 200px;
+}
+
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mat-header-cell,
+.mat-cell {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+mat-paginator {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}

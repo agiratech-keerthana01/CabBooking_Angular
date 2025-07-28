@@ -1,0 +1,43 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  background-color: #13338d; // Angular Material primary color
+  color: white;
+}
+
+.app-name {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+button[mat-button] {
+  color: #13338d;
+  font-weight: 500;
+  margin-left: 12px;
+  padding: 6px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+  }
+}
+
+/* Optional: Responsive for small screens */
+@media (max-width: 600px) {
+  .app-name {
+    font-size: 18px;
+  }
+
+  button[mat-button] {
+    font-size: 14px;
+    margin-left: 6px;
+  }
+}

@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ViewBookings } from './components/view-bookings/view-bookings';
 import { TimeformatPipe } from '../shared/pipes/timeformat-pipe';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -31,6 +32,7 @@ import { TimeformatPipe } from '../shared/pipes/timeformat-pipe';
     MatSortModule,
     MatInputModule,
     MatFormFieldModule,
+    MatCardModule,
     RouterOutlet,
   ]
 })

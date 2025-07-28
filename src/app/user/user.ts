@@ -17,7 +17,7 @@ export class User {
 
 
   logout(): void {
-    localStorage.clear();
+    sessionStorage.clear();
     this.router.navigate(['/login']);
   }
 }

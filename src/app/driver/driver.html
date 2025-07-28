@@ -1,2 +1,11 @@
-<p>driver works!</p>
+<mat-toolbar color="primary">
+  <span class="driver-name">Cab Booking App</span>
+  <span class="spacer"></span>
+
+  <button mat-button (click)="navigateTo('')"></button>
+  <button mat-button (click)="navigateTo('completed')">Completed Trips</button>
+  <button mat-button (click)="navigateTo('earnings')">My Earnings</button>
+  <button mat-button (click)="logout()">Logout</button>
+</mat-toolbar>
+
 <router-outlet></router-outlet>

@@ -38,7 +38,7 @@ export class AdminService {
   }
 
    getAllBookings(filters?: {
-    date?: string;       // e.g. '2025-07-22'
+    date?: string;      
     employee?: string;
     driver?: string;
   }): Observable<ViewBooking[]> {

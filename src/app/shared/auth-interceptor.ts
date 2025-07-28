@@ -3,13 +3,15 @@ import { inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { catchError, EMPTY, throwError } from 'rxjs';
+import { environment } from '../environments/environment';
 
 //here we use inject() because, it is a functional interceptor. NOT class-based interceptor(@Injectable)
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
 
-  const token = localStorage.getItem('token');
+
+  const token = sessionStorage.getItem('token');
   const router = inject(Router);
   const snackBar = inject(MatSnackBar);
 
@@ -17,15 +19,6 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   // Skip adding token for login or register requests
   if (req.url.endsWith('/login') || req.url.endsWith('/register')) {
     return next(req);
-  }
-
-  if(!token) {
-    snackBar.open('You must log in to use the service', 'Close', {
-      duration: 3000,
-      verticalPosition: 'top'
-    });
-    router.navigate(['/login']);
-    return EMPTY;
   }
 
   const cloned = req.clone({
@@ -37,12 +30,12 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(cloned).pipe(
     catchError((error: any) => {
-      if (error.status === 401 && error.error?.message?.includes('expired')) {
+      if (error.status === 500 && error.error?.message?.includes('expired')) {
         snackBar.open('Session expired. Please login again.', 'Close', {
           duration: 3000,
           verticalPosition: 'bottom',
         });
-        localStorage.removeItem('token');
+        sessionStorage.removeItem('token');
         router.navigate(['/login']);
         return EMPTY;
       } else if (error.status === 401) {
@@ -51,7 +44,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
           verticalPosition: 'top',
         });
         router.navigate(['/login']);
-        return EMPTY;
+        return EMPTY; 
       }
       return throwError(() => error);
     })

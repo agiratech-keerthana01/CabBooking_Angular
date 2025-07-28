@@ -1,0 +1,36 @@
+<div class="assigned-wrapper">
+  <h2>Assigned Trips</h2>
+
+  <p *ngIf="assignedTrips.length > 0">Trips found: {{ assignedTrips.length }}</p>
+  <p *ngIf="assignedTrips.length === 0 && !message">No assigned trips found.</p>
+  <p *ngIf="message" class="error">{{ message }}</p>
+
+  <div class="assigned-container" *ngIf="assignedTrips.length >= 0">
+    <mat-list>
+      <mat-list-item *ngFor="let trip of assignedTrips" class="trip-item">
+        <mat-card class="trip-card">
+          <mat-card-content>
+            
+            <p>
+              <strong>Pickup:</strong> {{ trip.pickupTime | date: 'dd MMM yyyy, h:mm a' }} |
+              <strong>Drop:</strong> {{ trip.dropTime | date: 'dd MMM yyyy, h:mm a' }}
+            </p>
+            <p>
+              <strong>Distance:</strong> {{ trip.distance }} km &nbsp;&nbsp; | &nbsp;&nbsp;
+              <strong>Amount:</strong> ₹{{ trip.amount }}
+              
+            </p>
+            <p><strong>From:</strong> {{ trip.pickupPoint }} &nbsp;&nbsp; <strong>To:</strong> {{ trip.dropPoint }}</p>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button mat-raised-button color="primary" (click)="completeTrip(trip.id)">
+              Complete Trip
+            </button>
+          </mat-card-actions>
+        </mat-card>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
+
