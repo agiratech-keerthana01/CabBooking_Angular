@@ -19,6 +19,7 @@ export class Register {
     upperLowerCase: false,
     specialChar: false,
   };
+  message: string = '';
 
   constructor(
     private fb: FormBuilder,
